@@ -1,5 +1,14 @@
 // Create a function called computerPlay to randomly return rock, paper, or scissors
 
+function computerPlay() {
+    const gameChoices = ["rock", "paper", "scissors"]
+    let computerChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+    console.log(computerChoice)
+    return computerChoice;
+}
+
+computerPlay();
+
 /* Create a function that declares a winner of the round
     - Possible outcomes:
         - rock beats scissors
