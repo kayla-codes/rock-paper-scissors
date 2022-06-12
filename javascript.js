@@ -14,10 +14,19 @@ function computerPlay() {
         - If not, then show "Choice is invalid. Try again." and restart loop.
 */
 
-/* Create a function called validPlayerSelection
+/* Create a function called playerSelectionValidator
     - playerSelection must match rock, paper, or scissors
     - Return boolean
 */
+
+function playerSelectionValidator(playerSelection) {
+    if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 /* Create a function that declares a winner of the round
     - Possible outcomes:
