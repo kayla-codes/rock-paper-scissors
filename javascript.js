@@ -2,8 +2,8 @@
 
 function computerPlay() {
     const gameChoices = ["rock", "paper", "scissors"]
-    let computerChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
-    return computerChoice;
+    let computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+    return computerSelection;
 }
 
 /* Create a function for player selection called playerPlay
