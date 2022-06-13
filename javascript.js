@@ -21,7 +21,7 @@ function playerPlay() {
         playerSelection = prompt("Choose one: rock, paper, scissors");
         if (playerSelection != null){
             playerSelection = playerSelection.toLowerCase();
-            validPlayerSelection = playerSelectionValidator(playerSelection)
+            validPlayerSelection = validatePlayerSelection(playerSelection)
             if (validPlayerSelection) {
                 return playerSelection;
             } else {
@@ -38,7 +38,7 @@ function playerPlay() {
     - Return boolean
 */
 
-function playerSelectionValidator(playerSelection) {
+function validatePlayerSelection(playerSelection) {
     if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
         return true;
     } else {
