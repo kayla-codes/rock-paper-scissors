@@ -19,13 +19,16 @@ function playerPlay() {
     let validPlayerSelection = false;
     while (!validPlayerSelection) {
         playerSelection = prompt("Choose one: rock, paper, scissors");
-        validPlayerSelection = playerSelectionValidator(playerSelection);
-        if (playerSelection === null){
-            return alert("You have closed the game. Refresh if you want to play again.");
-        } else if (validPlayerSelection) {
-            return playerSelection;
+        if (playerSelection != null){
+            playerSelection = playerSelection.toLowerCase();
+            validPlayerSelection = playerSelectionValidator(playerSelection)
+            if (validPlayerSelection) {
+                return playerSelection;
+            } else {
+                alert("Choice is invalid. Please try again.");
+            }
         } else {
-            alert("Choice is invalid. Please try again.")
+            return alert("You have closed the game. Refresh if you want to play again.");
         }
     }
 }
@@ -38,8 +41,7 @@ function playerPlay() {
 function playerSelectionValidator(playerSelection) {
     if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
