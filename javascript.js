@@ -14,6 +14,22 @@ function computerPlay() {
         - If not, then show "Choice is invalid. Try again." and restart loop.
 */
 
+function playerPlay() {
+    let playerSelection;
+    let validPlayerSelection = false;
+    while (!validPlayerSelection) {
+        playerSelection = prompt("Choose one: rock, paper, scissors");
+        validPlayerSelection = playerSelectionValidator(playerSelection);
+        if (playerSelection === null){
+            return alert("You have closed the game. Refresh if you want to play again.");
+        } else if (validPlayerSelection) {
+            return playerSelection;
+        } else {
+            alert("Choice is invalid. Please try again.")
+        }
+    }
+}
+
 /* Create a function called playerSelectionValidator
     - playerSelection must match rock, paper, or scissors
     - Return boolean
