@@ -20,7 +20,7 @@ function playerPlay() {
     while (!validPlayerSelection) {
         playerSelection = prompt("Choose one: rock, paper, scissors");
         if (playerSelection != null){
-            playerSelection = playerSelection.toLowerCase();
+            playerSelection = (playerSelection.toLowerCase()).trim();
             validPlayerSelection = validatePlayerSelection(playerSelection)
             if (validPlayerSelection) {
                 return playerSelection;
