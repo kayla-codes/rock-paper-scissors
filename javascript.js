@@ -28,7 +28,7 @@ function playerPlay() {
                 alert("Choice is invalid. Please try again.");
             }
         } else {
-            return alert("You have closed the game. Refresh if you want to play again.");
+            return playerSelection
         }
     }
 }
@@ -75,6 +75,27 @@ function determineRoundWinner(computerSelection, playerSelection) {
     - Declare winner and store in roundWinner
     - returns a string that declares the winner    
 */
+
+function playRound(computerSelection, playerSelection) {
+    computerSelection = computerPlay();
+    playerSelection = playerPlay();
+    let roundWinner
+    if (playerSelection !== null) {
+        roundWinner = determineRoundWinner(computerSelection, playerSelection);
+        if (roundWinner === "player") {
+            console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
+            return roundWinner
+        } else if (roundWinner === "computer") {
+            console.log(`You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`);
+            return roundWinner
+        } else {
+            console.log("Draw!");
+        }
+    } else {
+        console.log("You have closed the game. Refresh if you want to play again.");
+        return roundWinner = "Game closed";
+    }
+}
 
 // Create a function that keeps score
 
