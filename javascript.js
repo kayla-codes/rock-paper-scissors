@@ -57,13 +57,10 @@ function validatePlayerSelection(playerSelection) {
 
 function determineRoundWinner(computerSelection, playerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "rock") {
-        alert("You win!");
         return "player";
     } else if (playerSelection === computerSelection) {
-        alert("Draw");
         return "draw";
     } else {
-        alert("You lose!");
         return "computer"; 
     }
 }
