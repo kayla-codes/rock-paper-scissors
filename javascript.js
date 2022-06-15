@@ -82,7 +82,6 @@ function playRound(computerSelection, playerSelection) {
         announceRoundWinner(roundWinner, computerSelection, playerSelection);
         return roundWinner;
     } else {
-        console.log("You have closed the game. Refresh if you want to play again.");
         return roundWinner = "Game closed";
     }
 }
@@ -128,7 +127,7 @@ function game() {
                 console.log("No points granted.")
             }
         } else {
-            return console.log("Goodbye. Refresh to play again.");
+            return console.log("You have closed the game. Refresh if you want to play again.");;
         }
     }
     return console.log("Thank you for playing! Refresh to play again.")
