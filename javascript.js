@@ -8,20 +8,20 @@ function game() {
         let roundWinner = playRound();
         if (roundWinner !== "Game closed") {
             if (roundWinner === "player") {
-                console.log("You earn 1 point!")
+                console.log("You earn 1 point!");
                 ++playerScore;
             } else if (roundWinner === "computer"){
-                console.log("The computer earns 1 point!")
+                console.log("The computer earns 1 point!");
                 ++computerScore;
             } else {
-                console.log("No points granted.")
+                console.log("No points granted.");
             }
         } else {
-            return console.log("You have closed the game. Refresh if you want to play again.");;
+            return console.log("You have closed the game. Refresh if you want to play again.");
         }
     }
-    gameOutcomeMessage = announceGameWinner(playerScore, computerScore)
-    return console.log(`Your score is ${playerScore}. The computer's score is ${computerScore}. ${gameOutcomeMessage} Thank you for playing. Refresh to play again.`)
+    gameOutcomeMessage = announceGameWinner(playerScore, computerScore);
+    return console.log(`Your score is ${playerScore}. The computer's score is ${computerScore}. ${gameOutcomeMessage} Thank you for playing. Refresh to play again.`);
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function computerPlay() {
-    const gameChoices = ["rock", "paper", "scissors"]
+    const gameChoices = ["rock", "paper", "scissors"];
     let computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
     return computerSelection;
 }
@@ -50,14 +50,14 @@ function playerPlay() {
         playerSelection = prompt("Choose one: rock, paper, scissors");
         if (playerSelection != null){
             playerSelection = (playerSelection.toLowerCase()).trim();
-            validPlayerSelection = validatePlayerSelection(playerSelection)
+            validPlayerSelection = validatePlayerSelection(playerSelection);
             if (validPlayerSelection) {
                 return playerSelection;
             } else {
                 alert("Choice is invalid. Please try again.");
             }
         } else {
-            return playerSelection
+            return playerSelection;
         }
     }
 }
@@ -83,13 +83,13 @@ function determineRoundWinner(playerSelection, computerSelection) {
 function announceRoundWinner(roundWinner, playerSelection, computerSelection) {
     if (roundWinner === "player") {
         console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
-        return 
+        return; 
     } else if (roundWinner === "computer") {
         console.log(`You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`);
-        return 
+        return;
     } else {
         console.log("Draw!");
-        return
+        return;
     }
 }
 
