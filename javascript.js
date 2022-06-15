@@ -8,13 +8,9 @@ function game() {
         let roundWinner = playRound();
         if (roundWinner !== "Game closed") {
             if (roundWinner === "player") {
-                console.log("You earn 1 point!");
                 ++playerScore;
-            } else if (roundWinner === "computer"){
-                console.log("The computer earns 1 point!");
+            } else if (roundWinner === "computer") {
                 ++computerScore;
-            } else {
-                console.log("No points granted.");
             }
         } else {
             return console.log("You have closed the game. Refresh if you want to play again.");
@@ -82,13 +78,13 @@ function determineRoundWinner(playerSelection, computerSelection) {
 
 function announceRoundWinner(roundWinner, playerSelection, computerSelection) {
     if (roundWinner === "player") {
-        console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
+        console.log(`${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}! You win! You earn 1 point.`);
         return; 
     } else if (roundWinner === "computer") {
-        console.log(`You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`);
+        console.log(`${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}! You lose! The computer earns 1 point.`);
         return;
     } else {
-        console.log("Draw!");
+        console.log("Draw! No points earned.");
         return;
     }
 }
