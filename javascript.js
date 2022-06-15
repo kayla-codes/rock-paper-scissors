@@ -8,9 +8,9 @@ function game() {
         let roundWinner = playRound();
         if (roundWinner !== "Game closed") {
             if (roundWinner === "player") {
-                ++playerScore;
+                playerScore++;
             } else if (roundWinner === "computer") {
-                ++computerScore;
+                computerScore++;
             }
         } else {
             return console.log("You have closed the game. Refresh if you want to play again.");
