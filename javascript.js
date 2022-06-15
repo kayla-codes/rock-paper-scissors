@@ -102,27 +102,6 @@ function announceRoundWinner(roundWinner, computerSelection, playerSelection) {
     }
 }
 
-// Create a function that keeps score
-
-function keepScore() {
-    let score = [0, 0]
-    for (let i = 0; i < 5; i++) {
-        let roundWinner = playRound();
-        if (roundWinner !== "Game closed") {
-            if (roundWinner === "player") {
-                console.log("You earn 1 point!")
-                score = score[0] + 1;
-            } else if (roundWinner === "computer"){
-                console.log("The computer earns 1 point!")
-                score = score[1] + 1;
-            } else {
-                console.log("No points granted.")
-            }
-        } else {
-            return;
-        }
-    }
-}
 
 // Create a function that declares winner of the round
 
@@ -132,3 +111,25 @@ function keepScore() {
     - Keeps score 
     - Reports a winner
 */
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        let roundWinner = playRound();
+        if (roundWinner !== "Game closed") {
+            if (roundWinner === "player") {
+                console.log("You earn 1 point!")
+                ++playerScore;
+            } else if (roundWinner === "computer"){
+                console.log("The computer earns 1 point!")
+                ++computerScore;
+            } else {
+                console.log("No points granted.")
+            }
+        } else {
+            return console.log("Goodbye. Refresh to play again.");
+        }
+    }
+    return console.log("Thank you for playing! Refresh to play again.")
+}
