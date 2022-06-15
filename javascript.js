@@ -124,6 +124,7 @@ function announceGameWinner(computerScore, playerScore) {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
+    let gameOutcomeMessage = "";
     for (let i = 0; i < 5; i++) {
         let roundWinner = playRound();
         if (roundWinner !== "Game closed") {
@@ -140,5 +141,6 @@ function game() {
             return console.log("You have closed the game. Refresh if you want to play again.");;
         }
     }
-    return console.log("Thank you for playing! Refresh to play again.")
+    gameOutcomeMessage = announceGameWinner(computerScore, playerScore)
+    return console.log(`${gameOutcomeMessage} Thank you for playing. Refresh to play again.`)
 }
