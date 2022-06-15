@@ -55,7 +55,7 @@ function validatePlayerSelection(playerSelection) {
     - Returns winner 
 */
 
-function determineRoundWinner(computerSelection, playerSelection) {
+function determineRoundWinner(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "rock") {
         return "player";
     } else if (playerSelection === computerSelection) {
@@ -73,13 +73,13 @@ function determineRoundWinner(computerSelection, playerSelection) {
     - returns a string that declares the winner    
 */
 
-function playRound(computerSelection, playerSelection) {
-    computerSelection = computerPlay();
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerPlay();
+    computerSelection = computerPlay();
     let roundWinner = "";
     if (playerSelection !== null) {
-        roundWinner = determineRoundWinner(computerSelection, playerSelection);
-        announceRoundWinner(roundWinner, computerSelection, playerSelection);
+        roundWinner = determineRoundWinner(playerSelection, computerSelection);
+        announceRoundWinner(roundWinner, playerSelection, computerSelection);
         return roundWinner;
     } else {
         return roundWinner = "Game closed";
@@ -88,7 +88,7 @@ function playRound(computerSelection, playerSelection) {
 
 // Create a function to announce round winner 
 
-function announceRoundWinner(roundWinner, computerSelection, playerSelection) {
+function announceRoundWinner(roundWinner, playerSelection, computerSelection) {
     if (roundWinner === "player") {
         console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
         return 
@@ -104,7 +104,7 @@ function announceRoundWinner(roundWinner, computerSelection, playerSelection) {
 
 // Create a function that declares winner of the round
 
-function announceGameWinner(computerScore, playerScore) {
+function announceGameWinner(playerScore, computerScore) {
     if (playerScore > computerScore) {
         return "Congrats! You win!";
     } else if (playerScore < computerScore) {
@@ -141,6 +141,6 @@ function game() {
             return console.log("You have closed the game. Refresh if you want to play again.");;
         }
     }
-    gameOutcomeMessage = announceGameWinner(computerScore, playerScore)
+    gameOutcomeMessage = announceGameWinner(playerScore, computerSelection)
     return console.log(`Your score is ${playerScore}. The computer's score is ${computerScore}. ${gameOutcomeMessage} Thank you for playing. Refresh to play again.`)
 }
