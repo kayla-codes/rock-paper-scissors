@@ -96,6 +96,23 @@ function playRound(computerSelection, playerSelection) {
 
 // Create a function that keeps score
 
+function keepScore() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        let roundWinner = playRound();
+        if (roundWinner !== "Game closed") {
+            if (roundWinner === "player") {
+                playerScore += 1;
+            } else if (roundWinner === "computer"){
+                computerScore += 1;
+            }
+        } else {
+            return;
+        }
+    }
+}
+
 // Create a function that declares winner of the round
 
 /* Create a function called game 
