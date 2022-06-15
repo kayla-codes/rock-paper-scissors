@@ -104,6 +104,16 @@ function announceRoundWinner(roundWinner, computerSelection, playerSelection) {
 
 // Create a function that declares winner of the round
 
+function announceGameWinner(computerScore, playerScore) {
+    if (playerScore > computerScore) {
+        return "Congrats! You win!";
+    } else if (playerScore < computerScore) {
+        return "Boohoo! You lose!";
+    } else {
+        return "No winner. How dull.";
+    }
+}
+
 /* Create a function called game 
     - Calls the playRound function
     - Plays 5 rounds
