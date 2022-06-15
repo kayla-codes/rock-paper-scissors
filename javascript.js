@@ -79,19 +79,26 @@ function playRound(computerSelection, playerSelection) {
     let roundWinner = "";
     if (playerSelection !== null) {
         roundWinner = determineRoundWinner(computerSelection, playerSelection);
-        if (roundWinner === "player") {
-            console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
-            return roundWinner;
-        } else if (roundWinner === "computer") {
-            console.log(`You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`);
-            return roundWinner;
-        } else {
-            console.log("Draw!");
-            return roundWinner;
-        }
+        announceRoundWinner(roundWinner);
+        return roundWinner;
     } else {
         console.log("You have closed the game. Refresh if you want to play again.");
         return roundWinner = "Game closed";
+    }
+}
+
+// Create a function to announce round winner 
+
+function announceRoundWinner(roundWinner) {
+    if (roundWinner === "player") {
+        console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
+        return 
+    } else if (roundWinner === "computer") {
+        console.log(`You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`);
+        return 
+    } else {
+        console.log("Draw!");
+        return
     }
 }
 
