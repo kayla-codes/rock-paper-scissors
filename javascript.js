@@ -20,7 +20,7 @@ function game() {
             return console.log("You have closed the game. Refresh if you want to play again.");;
         }
     }
-    gameOutcomeMessage = announceGameWinner(playerScore, computerSelection)
+    gameOutcomeMessage = announceGameWinner(playerScore, computerScore)
     return console.log(`Your score is ${playerScore}. The computer's score is ${computerScore}. ${gameOutcomeMessage} Thank you for playing. Refresh to play again.`)
 }
 
