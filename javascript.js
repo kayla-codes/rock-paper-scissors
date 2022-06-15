@@ -76,17 +76,18 @@ function determineRoundWinner(computerSelection, playerSelection) {
 function playRound(computerSelection, playerSelection) {
     computerSelection = computerPlay();
     playerSelection = playerPlay();
-    let roundWinner
+    let roundWinner = "";
     if (playerSelection !== null) {
         roundWinner = determineRoundWinner(computerSelection, playerSelection);
         if (roundWinner === "player") {
             console.log(`You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`);
-            return roundWinner
+            return roundWinner;
         } else if (roundWinner === "computer") {
             console.log(`You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`);
-            return roundWinner
+            return roundWinner;
         } else {
             console.log("Draw!");
+            return roundWinner;
         }
     } else {
         console.log("You have closed the game. Refresh if you want to play again.");
