@@ -105,15 +105,14 @@ function announceRoundWinner(roundWinner) {
 // Create a function that keeps score
 
 function keepScore() {
-    let playerScore = 0;
-    let computerScore = 0;
+    let score = [0, 0]
     for (let i = 0; i < 5; i++) {
         let roundWinner = playRound();
         if (roundWinner !== "Game closed") {
             if (roundWinner === "player") {
-                playerScore += 1;
+                score = score[0] + 1;
             } else if (roundWinner === "computer"){
-                computerScore += 1;
+                score = score[1] + 1;
             }
         } else {
             return;
